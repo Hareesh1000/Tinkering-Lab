@@ -153,33 +153,33 @@ def call_db_prc():
         print("Database Error:", error.message)
 
 
-def send_automail():
-    import smtplib
-    from email.mime.text import MIMEText
-    from email.mime.multipart import MIMEMultipart
+# def send_automail():
+#     import smtplib
+#     from email.mime.text import MIMEText
+#     from email.mime.multipart import MIMEMultipart
 
-    # Email configuration
-    sender_email = "ind.gameworld@gmail.com"
-    receiver_email = "hareeshraj10@gmail.com"
-    subject = "Subject of the Email"
-    body = "Body of the email."
+#     # Email configuration
+#     sender_email = "ind.gameworld@gmail.com"
+#     receiver_email = "hareeshraj10@gmail.com"
+#     subject = "Subject of the Email"
+#     body = "Body of the email."
 
-    # Create the MIME object
-    message = MIMEMultipart()
-    message["From"] = sender_email
-    message["To"] = receiver_email
-    message["Subject"] = subject
+#     # Create the MIME object
+#     message = MIMEMultipart()
+#     message["From"] = sender_email
+#     message["To"] = receiver_email
+#     message["Subject"] = subject
 
-    # Attach the body to the email
-    message.attach(MIMEText(body, "plain"))
+#     # Attach the body to the email
+#     message.attach(MIMEText(body, "plain"))
 
-    # Establish a connection to the SMTP server (in this case, Gmail's SMTP server)
-    with smtplib.SMTP("smtp.gmail.com", 587) as server:
-        server.starttls()  # Use TLS for security
-        server.login(sender_email, "qiia dlkr hlrw tgkj")  # important app pwd
-        server.sendmail(sender_email, receiver_email, message.as_string())
+#     # Establish a connection to the SMTP server (in this case, Gmail's SMTP server)
+#     with smtplib.SMTP("smtp.gmail.com", 587) as server:
+#         server.starttls()  # Use TLS for security
+#         server.login(sender_email, "qiia dlkr hlrw tgkj")  # important app pwd
+#         server.sendmail(sender_email, receiver_email, message.as_string())
 
-    print("Email sent successfully.")
+#     print("Email sent successfully.")
 
 def generate_html_table(data):
     # Generate the opening tag for the table
