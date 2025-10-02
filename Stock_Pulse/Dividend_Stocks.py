@@ -94,7 +94,7 @@ def get_data():
         # Data to be inserted
         data_to_insert = company_info
         # Prepare and execute the INSERT statement
-        print(data_to_insert)
+     
         insert_sql = """
             INSERT INTO dividend_stocks (
                 company_name,
@@ -222,10 +222,11 @@ def send_automail():
     cursor.execute(query)
     return_value = cursor.fetchall()
 
+
     # Email configuration
     sender_email = "ind.gameworld@gmail.com"
     receiver_email = "hareeshraj10@gmail.com"
-    subject = "[SP] Automated Mail - Dividend stocks"
+    subject = "[SP] Automated Mail - Dividend stock List Latest"
     body = "New announcement about the Dividend Stocks"
 
     # Create the MIME object
