@@ -1,11 +1,8 @@
 {
-  "name": "frontend",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
-
-  
   "dependencies": {
-    "18": "^0.0.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.4",
@@ -14,14 +11,21 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "nodemon": "^3.1.10",
+    "chart.js": "^4.5.0",
+    "chroma-js": "^3.1.2",
+    "module-alias": "^2.2.3",
     "react": "^19.2.0",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.3",
+    "react-github-btn": "^1.4.0",
+    "react-router-dom": "^7.9.4",
     "react-scripts": "5.0.1",
-    "stylis": "^4.3.6",
+    "react-table": "^7.8.0",
     "stylis-plugin-rtl": "^2.1.1",
     "web-vitals": "^2.1.4"
+  },
+  "_moduleAliases": {
+    "components": "src/components"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,7 +33,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
   "eslintConfig": {
     "extends": [
       "react-app",
