@@ -3,12 +3,12 @@
 # dependencies
 /node_modules
 node_modules/
-components/
-assets/
+# components/
+# assets/
 
-context/
-examples/
-layouts/
+# context/
+# examples/
+# layouts/
 
 /.pnp
 .pnp.js
