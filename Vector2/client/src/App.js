@@ -1,11 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import Dashboard from './Dashboard';
+// import Dashboard from './Dashboard';
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from './AppRouter';
+
 
 function App() {
   return (
     <div className="App">
-      <Dashboard></Dashboard>
+      {/* <Dashboard></Dashboard> */}
+      <BrowserRouter>
+          <AppRouter></AppRouter>
+      </BrowserRouter>
+      
     </div>
   );
 }
