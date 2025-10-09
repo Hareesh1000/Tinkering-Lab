@@ -131,8 +131,10 @@ class DataImport:
             print(f"An error occurred in extract_data: {e}")
 
     # ------------------ Keyboard Check ------------------ #
+    # ------------------ Keyboard Check ------------------ #
     def check_enter_key(self):
         try:
+            start_time = time.time()
             while True:
                 if keyboard.is_pressed("enter"):
                     return 1
@@ -140,9 +142,14 @@ class DataImport:
                     print("ESC pressed! Stopping process...")
                     self.stop_requested = True
                     return 0
+                elif time.time() - start_time >= 5:  # 5-second timeout
+                    print("Auto Enter triggered after 5 seconds")
+                    keyboard.press_and_release("enter")
+                    return 1
         except Exception as e:
             print(f"Error in check_enter_key: {e}")
             return 0
+
 
     # ------------------ Store Data ------------------ #
     def store_to_database(self, stock_data):
