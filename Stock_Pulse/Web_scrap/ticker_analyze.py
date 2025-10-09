@@ -195,7 +195,7 @@ class DataImport:
 
 # ------------------ Main Execution ------------------ #
 if __name__ == "__main__":
-    test = DataImport()
-    test.scrap_the_web()
+    ticker = DataImport()
+    ticker.scrap_the_web()
     print('Final call to procedure...')
-    test.call_the_procedure()
+    ticker.call_the_procedure()
