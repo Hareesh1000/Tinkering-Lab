@@ -15,7 +15,7 @@ class DataImport:
     def __init__(self):
         self.data_processed = 1
         self.driver = webdriver.Chrome()
-
+        self.stop_requested = False   # Flag for ESC stop
     # ------------------ Database Connection ------------------ #
     def connect_to_database(self):
         try:
@@ -33,11 +33,19 @@ class DataImport:
             stock_list = self.get_the_list()
 
             for stock in stock_list:
+                if keyboard.is_pressed("esc"):
+                    print("ESC pressed! Stopping the scraping process...")
+                    self.stop_requested = True
+                    break
+
                 self.search_the_stock(stock)
                 self.wait_for_seconds(2)
 
-                print('Waiting for Manual Enter Key !!!!')
+                print('Press Enter to process data OR Esc to stop process.')
                 manual_enter = self.check_enter_key()
+                
+                if self.stop_requested:   # If ESC pressed inside check_enter_key
+                    break
 
                 if manual_enter == 1:
                     self.extract_data(stock)
@@ -125,9 +133,15 @@ class DataImport:
     # ------------------ Keyboard Check ------------------ #
     def check_enter_key(self):
         try:
-            keyboard.wait("enter")
-            return 1
-        except keyboard.KeyboardEvent:
+            while True:
+                if keyboard.is_pressed("enter"):
+                    return 1
+                elif keyboard.is_pressed("esc"):
+                    print("ESC pressed! Stopping process...")
+                    self.stop_requested = True
+                    return 0
+        except Exception as e:
+            print(f"Error in check_enter_key: {e}")
             return 0
 
     # ------------------ Store Data ------------------ #
