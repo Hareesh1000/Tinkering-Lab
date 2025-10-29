@@ -3,7 +3,8 @@ import requests
 import time
 import keyboard
 import sys
-
+import os
+from datetime import datetime
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -12,8 +13,19 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-# Open a file to save logs
-log_file = open("log.txt", "a")
+# Base log directory
+log_dir = r"C:\Users\91812\Documents\logs\stock_pulse_logs"
+
+# Ensure the directory exists
+os.makedirs(log_dir, exist_ok=True)
+
+# Create log filename with current date and time
+log_filename = f"log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+log_path = os.path.join(log_dir, log_filename)
+
+# Open log file in write mode (creates new each time)
+log_file = open(log_path, "w", encoding="utf-8")
+
 
 # Save original stdout
 original_stdout = sys.stdout
@@ -173,6 +185,21 @@ class DataImport:
             return 0
 
 
+  # ------------------ delete the  Data ------------------ #
+    def delete_table(self):
+        connection = self.connect_to_database()
+        if not connection:
+            return
+
+        try:
+            cursor = connection.cursor()
+            cursor.execute("DELETE FROM sp_raw_data")
+            print("Old data deleted.")
+
+            connection.commit()
+        except cx_Oracle.Error as e:
+            print(f"Oracle database error: {e}")
+
     # ------------------ Store Data ------------------ #
     def store_to_database(self, stock_data):
         connection = self.connect_to_database()
@@ -181,6 +208,7 @@ class DataImport:
 
         try:
             cursor = connection.cursor()
+
             cursor.executemany(
                 '''INSERT INTO sp_raw_data 
                    (series_no, nse_name, raw_data, CREATED_DATE) 
@@ -188,7 +216,7 @@ class DataImport:
                 stock_data
             )
             connection.commit()
-            print('Data Inserted')
+            print('Data Inserted into the DB')
             self.data_processed = 1
 
         except cx_Oracle.Error as e:
@@ -239,6 +267,8 @@ class DataImport:
 # ------------------ Main Execution ------------------ #
 if __name__ == "__main__":
     ticker = DataImport()
+
+    ticker.delete_table()
     ticker.scrap_the_web()
     print('Final call to procedure...')
     ticker.call_the_procedure()
