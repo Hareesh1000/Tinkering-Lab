@@ -128,7 +128,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_mc_data_analysis AS
                     FROM
                         dividend_stocks_config con
                     WHERE
-                        con.company_name = ds.company_name
+                        con.company_name = ds.company_name and trunc(created_date) >= trunc(sysdate) - 90   ---- Checking with last 3 month records
                 );
 
         COMMIT;
