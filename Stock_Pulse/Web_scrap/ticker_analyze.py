@@ -103,11 +103,13 @@ class DataImport:
             elements = soup.find_all(class_='cards-container')
             for element in elements:
                 data = [child.text.strip() for child in element.find_all(['p', 'span'])]
+                print(data)
+                categories = ['Performance', 'Valuation', 'Growth', 'Profitability', 'Entry point', 'Red flags']
 
                 organized_data = {}
                 current_category = None
                 for item in data:
-                    if item.isalpha() or ' ' in item:
+                    if item in categories:
                         current_category = item
                         organized_data[current_category] = []
                     else:
