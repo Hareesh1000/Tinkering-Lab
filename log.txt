@@ -1,0 +1,15 @@
+Entering stock name: PTC Industries Ltd
+Waiting for 2 seconds...
+Done waiting!
+Press Enter to process data OR Esc to stop process.
+Auto Enter triggered after 5 seconds
+Extracting from URL: https://www.tickertape.in/stocks
+Entering stock name: PVR INOX Ltd
+Waiting for 2 seconds...
+Done waiting!
+Press Enter to process data OR Esc to stop process.
+ESC pressed! Stopping process...
+Calling the procedure from the Finally block
+Procedure executed successfully.
+Final call to procedure...
+Procedure executed successfully.
