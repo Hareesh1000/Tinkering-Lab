@@ -2,6 +2,8 @@ import cx_Oracle
 import requests
 import time
 import keyboard
+import sys
+
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -9,6 +11,24 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+
+# Open a file to save logs
+log_file = open("log.txt", "a")
+
+# Save original stdout
+original_stdout = sys.stdout
+
+# Redirect print output
+class Logger:
+    def write(self, message):
+        original_stdout.write(message)  # print to console
+        log_file.write(message)         # write to file
+        log_file.flush()                # ensure it's saved immediately
+
+    def flush(self):
+        pass  # required for compatibility
+
+sys.stdout = Logger()
 
 
 class DataImport:
@@ -222,3 +242,8 @@ if __name__ == "__main__":
     ticker.scrap_the_web()
     print('Final call to procedure...')
     ticker.call_the_procedure()
+
+    ## Logging
+    # Restore original stdout when finished
+    sys.stdout = original_stdout
+    log_file.close()
