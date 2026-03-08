@@ -276,6 +276,10 @@ BEGIN
         END LOOP;
     END LOOP;
 
+    --- Finally --- Archive the data
+
+    insert into sp_stock_ticker_analysis_arch select * from sp_stock_ticker_analysis;
+
     COMMIT;
     p_err := 0;
     p_err_desc := 'Success';
