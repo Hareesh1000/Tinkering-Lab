@@ -1,0 +1,230 @@
+{
+  "profile": {
+    "user_id": "DH1386",
+    "user_type": "individual/res_no_nn",
+    "email": "hareeshraj10@gmail.com",
+    "user_name": "Rajendran Hareesh",
+    "user_shortname": "Rajendran",
+    "broker": "ZERODHA",
+    "exchanges": [
+      "MF",
+      "BSE",
+      "NSE"
+    ],
+    "products": [
+      "CNC",
+      "NRML",
+      "MIS",
+      "BO",
+      "CO"
+    ],
+    "order_types": [
+      "MARKET",
+      "LIMIT",
+      "SL",
+      "SL-M"
+    ],
+    "avatar_url": null,
+    "meta": {
+      "demat_consent": "physical"
+    }
+  },
+  "holdings": [
+    {
+      "tradingsymbol": "KNRCON",
+      "exchange": "NSE",
+      "instrument_token": 3912449,
+      "isin": "INE634I01029",
+      "product": "CNC",
+      "price": 0,
+      "quantity": 165,
+      "used_quantity": 0,
+      "t1_quantity": 0,
+      "realised_quantity": 165,
+      "authorised_quantity": 0,
+      "authorised_date": "2026-07-08 00:00:00",
+      "authorisation": {},
+      "opening_quantity": 165,
+      "short_quantity": 0,
+      "collateral_quantity": 0,
+      "collateral_type": "",
+      "discrepancy": false,
+      "average_price": 175.593878,
+      "last_price": 127.28,
+      "close_price": 127.73,
+      "pnl": -7971.789869999998,
+      "day_change": -0.45000000000000284,
+      "day_change_percentage": -0.35230564471933207,
+      "mtf": {
+        "quantity": 0,
+        "used_quantity": 0,
+        "average_price": 0,
+        "value": 0,
+        "initial_margin": 0
+      }
+    },
+    {
+      "tradingsymbol": "KOTARISUG",
+      "exchange": "NSE",
+      "instrument_token": 2981633,
+      "isin": "INE419A01022",
+      "product": "CNC",
+      "price": 0,
+      "quantity": 1303,
+      "used_quantity": 0,
+      "t1_quantity": 0,
+      "realised_quantity": 1303,
+      "authorised_quantity": 0,
+      "authorised_date": "2026-07-08 00:00:00",
+      "authorisation": {},
+      "opening_quantity": 1303,
+      "short_quantity": 0,
+      "collateral_quantity": 0,
+      "collateral_type": "",
+      "discrepancy": false,
+      "average_price": 45.516907,
+      "last_price": 25.57,
+      "close_price": 26.05,
+      "pnl": -25990.819821000005,
+      "day_change": -0.4800000000000004,
+      "day_change_percentage": -1.8426103646833032,
+      "mtf": {
+        "quantity": 0,
+        "used_quantity": 0,
+        "average_price": 0,
+        "value": 0,
+        "initial_margin": 0
+      }
+    },
+    {
+      "tradingsymbol": "ROSSARI",
+      "exchange": "NSE",
+      "instrument_token": 4968961,
+      "isin": "INE02A801020",
+      "product": "CNC",
+      "price": 0,
+      "quantity": 63,
+      "used_quantity": 0,
+      "t1_quantity": 0,
+      "realised_quantity": 63,
+      "authorised_quantity": 0,
+      "authorised_date": "2026-07-08 00:00:00",
+      "authorisation": {},
+      "opening_quantity": 63,
+      "short_quantity": 0,
+      "collateral_quantity": 0,
+      "collateral_type": "",
+      "discrepancy": false,
+      "average_price": 640.36746,
+      "last_price": 504.9,
+      "close_price": 516.45,
+      "pnl": -8534.449980000005,
+      "day_change": -11.550000000000068,
+      "day_change_percentage": -2.2364217252396297,
+      "mtf": {
+        "quantity": 0,
+        "used_quantity": 0,
+        "average_price": 0,
+        "value": 0,
+        "initial_margin": 0
+      }
+    },
+    {
+      "tradingsymbol": "TATACHEM",
+      "exchange": "NSE",
+      "instrument_token": 871681,
+      "isin": "INE092A01019",
+      "product": "CNC",
+      "price": 0,
+      "quantity": 37,
+      "used_quantity": 0,
+      "t1_quantity": 0,
+      "realised_quantity": 37,
+      "authorised_quantity": 0,
+      "authorised_date": "2026-07-08 00:00:00",
+      "authorisation": {},
+      "opening_quantity": 37,
+      "short_quantity": 0,
+      "collateral_quantity": 0,
+      "collateral_type": "",
+      "discrepancy": false,
+      "average_price": 898.104054,
+      "last_price": 710.4,
+      "close_price": 718.6,
+      "pnl": -6945.049998000001,
+      "day_change": -8.200000000000045,
+      "day_change_percentage": -1.1411077094350188,
+      "mtf": {
+        "quantity": 0,
+        "used_quantity": 0,
+        "average_price": 0,
+        "value": 0,
+        "initial_margin": 0
+      }
+    }
+  ],
+  "positions": {
+    "net": [],
+    "day": []
+  },
+  "orders": [],
+  "trades": [],
+  "funds": {
+    "equity": {
+      "enabled": true,
+      "net": 0,
+      "available": {
+        "adhoc_margin": 0,
+        "cash": 0,
+        "opening_balance": 0,
+        "live_balance": 0,
+        "collateral": 0,
+        "intraday_payin": 0
+      },
+      "utilised": {
+        "debits": 0,
+        "exposure": 0,
+        "m2m_realised": 0,
+        "m2m_unrealised": 0,
+        "option_premium": 0,
+        "payout": 0,
+        "span": 0,
+        "holding_sales": 0,
+        "turnover": 0,
+        "liquid_collateral": 0,
+        "stock_collateral": 0,
+        "equity": 0,
+        "delivery": 0,
+        "spread_benefit_nfo": 0
+      }
+    },
+    "commodity": {
+      "enabled": true,
+      "net": 0.5,
+      "available": {
+        "adhoc_margin": 0,
+        "cash": 0.5,
+        "opening_balance": 0.5,
+        "live_balance": 0.5,
+        "collateral": 0,
+        "intraday_payin": 0
+      },
+      "utilised": {
+        "debits": 0,
+        "exposure": 0,
+        "m2m_realised": 0,
+        "m2m_unrealised": 0,
+        "option_premium": 0,
+        "payout": 0,
+        "span": 0,
+        "holding_sales": 0,
+        "turnover": 0,
+        "liquid_collateral": 0,
+        "stock_collateral": 0,
+        "equity": 0,
+        "delivery": 0,
+        "spread_benefit_nfo": 0
+      }
+    }
+  }
+}
