@@ -159,6 +159,45 @@ class ZerodhaClient:
 
     # -----------------------------------------------------
 
+    def get_watchlist_symbols(self):
+        """
+        Return watchlist symbols from Kite if supported.
+        Falls back to an empty list when the API does not expose this method.
+        """
+        try:
+            watchlist = self.kite.get_watchlist()
+        except Exception as exc:
+            print(f"Watchlist API unavailable: {exc}")
+            return []
+
+        if isinstance(watchlist, list):
+            symbols = []
+            for item in watchlist:
+                if isinstance(item, dict):
+                    symbol = item.get("tradingsymbol") or item.get("trading_symbol")
+                    if isinstance(symbol, str) and symbol.strip():
+                        symbols.append(symbol.strip())
+                elif isinstance(item, str) and item.strip():
+                    symbols.append(item.strip())
+            return symbols
+
+        if isinstance(watchlist, dict):
+            items = watchlist.get("items") or watchlist.get("watchlist")
+            if isinstance(items, list):
+                symbols = []
+                for item in items:
+                    if isinstance(item, dict):
+                        symbol = item.get("tradingsymbol") or item.get("trading_symbol")
+                        if isinstance(symbol, str) and symbol.strip():
+                            symbols.append(symbol.strip())
+                    elif isinstance(item, str) and item.strip():
+                        symbols.append(item.strip())
+                return symbols
+
+        return []
+
+    # -----------------------------------------------------
+
     def logout(self):
 
         self.token_manager.clear_tokens()
