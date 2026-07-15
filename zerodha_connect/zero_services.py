@@ -3,6 +3,7 @@ import zero_app_get_data
 
 ## get the data from the json file and send it to the email
 def send_email_with_portfolio_data():
+    #zero_app_get_data.connect_and_save_portfolio_json()
     data = zero_app_get_data.get_tradingsymbols_from_portfolio_json()
     print("Portfolio data retrieved from JSON file:")
     print(data)
@@ -16,6 +17,11 @@ def send_email_with_portfolio_data():
 
 if __name__ == "__main__":
     send_email_with_portfolio_data()
+    
+    prices = zero_app_get_data.fetch_watchlist_symbols_from_zerodha()
+    print(prices)
+    print("End of script.")
+
 
 
    
